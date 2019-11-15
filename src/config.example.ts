@@ -10,3 +10,13 @@ export const mysql = {
   password: 'your mysql password here',
   database: 'your mysql database here',
 };
+
+// 腾讯云对象存储cos设置
+export const cosOpt = {
+  // 存储桶设置
+  Bucket: '****-****',
+  Region: 'ap-******',
+  // 密钥设置
+  SecretId: '*****',
+  SecretKey: '*****',
+};

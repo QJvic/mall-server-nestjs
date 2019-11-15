@@ -1,75 +1,48 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# 这是什么
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+应用nestjs搭建的商城后台服务。
 
-## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+# 如何运行
 
-```bash
-$ npm install
-```
+- ## 环境准备
 
-## Running the app
+1. nodejs环境
+2. mysql数据库
+3. 腾讯云对象存储（cos）【emmm，真不是广告，需要配置cos存储桶的跨域头，这里不展开了】
 
-```bash
-# development
-$ npm run start
+- ## 运行
 
-# watch mode
-$ npm run start:dev
+1. 修改src/config.example.ts文件里的配置项（mysql配置项的**database必须是已存在的数据库**，但是表不需要自己建，后续运行时代码会自动生成），修改完成后，将该文件重命名为config.ts
 
-# production mode
-$ npm run start:prod
-```
+2. 在根目录下打开控制台，运行
+   ```
+   npm install
+   ```
 
-## Test
+3. 在根目录下打开控制台，运行
+   ```
+   nest start
+   ```
+   
+4. 程序的默认端口为7001，如果没改的话，打开localhost:7001/api-docs能看到该服务的swagger文档（个人觉得写得还算详细）。
+   
+   
 
-```bash
-# unit tests
-$ npm run test
+# 实现了什么
 
-# e2e tests
-$ npm run test:e2e
+- 首页轮播图的增删改查
+- 首页宫格的增删改查
+- 首页推荐图的增删改查
+- 商品分类的。。。
+- 商品详情的。。。
+- 用户密码登录token认证（为了方便调试所有增删改查接口均未开启，若想开启，自行在control上加上相应注解即可）
 
-# test coverage
-$ npm run test:cov
-```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# TODO
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
+- [ ] 点击首页各种图绑定点击跳转的各种链接
+- [ ] 开源配套的后台管理网页和前台移动端网页商城
+- [ ] emmm，继续完善吧，主要各种功能自己也没想好该做什么
